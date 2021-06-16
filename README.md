@@ -1,4 +1,4 @@
-teraform fmt -- formate the .tf file
+teraform fmt -- formate the .tf file  k
 terrafrom workspace new workspace  --create workspaces in isolated state 
 terrafrom state-- list pull mv workspaces 
 terraform taint-- deletes  and recreates the resource
