@@ -33,5 +33,23 @@ terraform {
 condition 
 condition ? true_val : false_val
 
+
+
+variable "users" {
+  type = map(object({
+    is_admin = boolean
+  }))
+}
+
+locals {
+  admin_users = {
+    for name, user in var.users : name => user
+    if user.is_admin
+  }
+  regular_users = {
+    for name, user in var.users : name => user
+    if !user.is_admin
+  }
+}
 var.a != "" ? var.a : "default-a"
 
