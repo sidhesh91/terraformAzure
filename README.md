@@ -19,3 +19,19 @@ terrafrom destroy-- deletes the resoure
 terrafrom workspace select newworkspace --  select a different workspace 
 
 TF_LOG=dEBUG terrafrom apply -- run terrafrom in debug mode 
+BACKEND
+
+terraform {
+  backend "azurerm" {
+    resource_group_name  = "StorageAccount-ResourceGroup"
+    storage_account_name = "abcd1234"
+    container_name       = "tfstate"
+    key                  = "prod.terraform.tfstate"
+  }
+}
+
+condition 
+condition ? true_val : false_val
+
+var.a != "" ? var.a : "default-a"
+
